@@ -1,0 +1,111 @@
+<% if(user_id === "-1") { %>
+    <%- include('partials/header_user_free.ejs') %>
+<% } else { %>
+    <%- include('partials/header_user_login.ejs') %>
+<% } %>
+<%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/searchResult_content.css">
+<script src="/searchResult_button.js" defer></script>
+
+<div id="content">
+    <div id="sort_result">
+        <label>Sort by: </label>
+        <input type="radio" name="sortBy" value="Title"><label> Title </label>
+        <input type="radio" name="sortBy" value="Artist"><label> Artist </label>
+    </div>
+    <div id="results">
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button not-favorite" src="/favoriteIcon_not-favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button not-favorite" src="/favoriteIcon_not-favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button not-favorite" src="/favoriteIcon_not-favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+        <div class="row align-items-center item">
+            <div class="col-2">
+                <img class="disc" src="https://www.pngjoy.com/pngl/329/6177180_cd-icon-disc-icon-png-transparent-png.png"/>
+            </div>
+            <div class="col">
+                <h3>Title</h3>
+                <p>Artist name - Genre</p>
+            </div>
+            <div class="col-1">
+                <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+            </div>
+            <div class="col-1">
+                <img class="item_button download free" src="/download.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('partials/footer.ejs') %>

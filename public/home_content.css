@@ -1,0 +1,12 @@
+.item {
+    border: 2px solid gray;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 20px 20px 0px 20px;
+    margin: 20px 3%;
+}
+
+.disc{
+    height: 150px;
+    width: 150px;
+}

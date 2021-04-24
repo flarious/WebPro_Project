@@ -1,0 +1,19 @@
+.disc{
+    width: 150px;
+    height: 150px;
+}
+
+.item_button{
+    width: 75px;
+    height: 75px;
+}
+
+.item{
+    border: 2px solid black;
+    margin: 20px 5px;
+    padding: 10px;
+}
+
+#sort_result{
+    padding: 10px 0px 0px 6px;
+}

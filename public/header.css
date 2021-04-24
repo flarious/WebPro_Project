@@ -1,0 +1,56 @@
+#header{
+    position: fixed;
+    height: 8vh;
+    width: 90%;
+    z-index: 1;
+    background-color: #7d5a5a;
+    border: 2.4px solid black;
+}
+
+#logo{
+    padding: 0 0 0 1.5%;
+    font-family: 'Orbitron', cursive;
+}
+
+#search{
+    width: 100%;
+    margin: 0 0 0 3%;
+}
+
+.user_button{
+    background-color: #f1d1d1;
+}
+
+#user_icon{
+    height: 40px;
+    width: 40px;
+}
+
+#user_drop{
+    height: 30px;
+    width: 30px;
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown_content{
+    display: none;
+    position: absolute;
+    text-align: left;
+    min-width: 70px;
+    background-color: #faf2f2;
+    border: 1px solid black;
+    padding: 2px;
+    color: black;
+}
+
+.dropdown:hover .dropdown_content{
+    display: block;
+}
+
+.dropdown_content a:hover{
+    color: black;
+    text-decoration: underline;
+}
