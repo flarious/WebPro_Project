@@ -1,0 +1,36 @@
+<% if(user_id === "-1") { %>
+    <%- include('partials/header_user_free.ejs') %>
+<% } else { %>
+    <%- include('partials/header_user_login.ejs') %>
+<% } %>
+<%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/info_content.css">
+
+<div id="content">
+    <div id="background" class="row">
+    </div>
+    <div id="info_page" class="row">
+        <div id="info_page">
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <img class="disc" src="/temp_songIcon.png"/>
+                </div>
+                <div class="col-8">
+                    <h1 class="difSize_oneLine">Title</h1>
+                    <h3 class="difSize_oneLine">- Artist Name</h3>
+                    <h5>Genre</h5>
+                </div>
+                <div class="col-1">
+                    <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+                </div>
+                <div class="col-1">
+                    <img class="item_button download free" src="/download.png"/>
+                </div>
+            </div>
+            <div id="sub_info" class="row">
+                <h1>Lyric</h1>
+                <p>Some lyric for this song</p>
+            </div>
+        </div>
+    </div>
+</div>
