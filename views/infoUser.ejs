@@ -1,0 +1,57 @@
+<% if(user_id === "-1") { %>
+    <%- include('partials/header_user_free.ejs') %>
+<% } else { %>
+    <%- include('partials/header_user_login.ejs') %>
+<% } %>
+<%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/info_content.css">
+
+<div id="content">
+    <div id="background" class="row">
+        <p class="easter">EASTER EGG</p>
+    </div>
+    <div id="info_page" class="row">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <img class="disc" src="/temp_songIcon.png"/>
+            </div>
+            <div class="col-8">
+                <h1>User</h1>
+            </div>
+            <div class="col-2">
+                <img class="item_button edit" src="/edit.png"/>
+            </div>
+        </div>
+        <div id="sub_info" class="row">
+            <div class="row">
+                <div class="col-3">
+                    <h3 class="difSize_oneLine">Age: </h3>
+                    <h4 class="difSize_oneLine">age</h4>
+                </div>
+                <div class="col-9">
+                    <h3 class="difSize_oneLine">Gender: </h3>
+                    <h4 class="difSize_oneLine">gender</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>Most listened to:</h3>
+                    <div class="indented">
+                        <h4 class="difSize_oneLine">Songs: </h4>
+                        <h5 class="difSize_oneLine">song_1, song_2, song_3</h5>
+                        <br>
+                        <h4 class="difSize_oneLine">Artists: </h4>
+                        <h5 class="difSize_oneLine">artist_1, artist_2, artist_3</h5>
+                        <br>
+                        <h4 class="difSize_oneLine">Genres: </h4>
+                        <h5 class="difSize_oneLine">genre_1, genre_2, genre_3</h5>
+                    </div>
+                    
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

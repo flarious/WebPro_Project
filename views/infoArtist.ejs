@@ -1,0 +1,46 @@
+<% if(user_id === "-1") { %>
+    <%- include('partials/header_user_free.ejs') %>
+<% } else { %>
+    <%- include('partials/header_user_login.ejs') %>
+<% } %>
+<%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/info_content.css">
+
+<div id="content">
+    <div id="background" class="row">
+        <p class="easter">EASTER EGG</p>
+    </div>
+    <div id="info_page" class="row">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <img class="disc" src="/temp_songIcon.png"/>
+            </div>
+            <div class="col-8">
+                <h1>Artist Name</h1>
+            </div>
+            <div class="col-2">
+                <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+            </div>
+        </div>
+        <div id="sub_info" class="row">
+            <div class="row">
+                <div class="col">
+                    <h3 class="difSize_oneLine">Genre: </h3>
+                    <h4 class="difSize_oneLine">genre</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>Contact:</h3>
+                    <div class="indented">
+                        <h5><img class="socialMedia" src="/facebook_icon.png"/> : facebook account / fan page</h5>
+                        <h5><img class="socialMedia" src="/youtube_icon.png"/> : youtube channel</h5>
+                        <h5><img class="socialMedia" src="/instagram_icon.png"/> : Instagram account</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>
