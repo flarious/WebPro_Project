@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll(".item_button");
+const buttons = document.querySelectorAll(".itemButton");
 for(let button of buttons)
 {
     if(button.classList.contains("download"))

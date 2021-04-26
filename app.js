@@ -47,6 +47,16 @@ app.get('/userInfo/:user_id', function(req, res){
     res.render("infoUser.ejs", {user_id: user_id});
 });
 
+app.get('/userInfo/:user_id/edit', function(req, res){
+    let user_id = req.params.user_id;
+    res.render("infoUser_edit.ejs", {user_id: user_id});
+});
+
+app.get('/playlist/:playlist_id', function(req, res){
+    let playlist_id = req.params.playlist_id;
+    res.render("playlist.ejs", {user_id: '-1', playlist_id: playlist_id});
+});
+
 /*
 app.get('/info', function(req, res){
     res.render("info.ejs", {user_id: '-1'});

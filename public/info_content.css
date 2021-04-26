@@ -1,46 +1,23 @@
-#info_page{
+#infoPage{
     padding: 6%;
 }
 
-#sub_info{
+#subInfo{
     padding: 4% 6% 2% 6%;
 }
 
-.disc{
+.infoImage{
     width: 150px;
     height: 150px;
     background-color: white;
     border: 2px solid black;
 }
 
-.item_button{
-    width: 75px;
-    height: 75px;
-}
-
-.difSize_oneLine{
-    display: inline;
-}
-
-#title{
-    font-weight: bold;
-}
-
-.easter{
-    color: #7d5a5a7e;
-    font-size: 100px;
-}
-
-#background{
-    background-color: #7d5a5a;
-}
-
-.socialMedia{
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-}
-
-.indented{
-    margin: 0px 5%;
+.item{
+    border: 2px solid gray;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 20px 20px 0px 20px;
+    margin: 20px 3%;
+    background-color: #7d5a5a85;
 }

@@ -4,25 +4,26 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/info_content.css">
 
 <div id="content">
     <div id="background" class="row">
-        <p class="easter">EASTER EGG</p>
+        <p class="hidden forBackground">bg</p>
     </div>
-    <div id="info_page" class="row">
+    <div id="infoPage" class="row">
         <div class="row align-items-center">
             <div class="col-2">
-                <img class="disc" src="/temp_songIcon.png"/>
+                <img class="infoImage" src="/temp_genreIcon.png"/>
             </div>
             <div class="col-8">
                 <h1>Genre</h1>
             </div>
             <div class="col-2">
-                <img class="item_button favorite" src="/favoriteIcon_favorite.png"/>
+                <img class="itemButton favorite" src="/favoriteIcon_favorite.png"/>
             </div>
         </div>
-        <div id="sub_info" class="row">
+        <div id="subInfo" class="row">
             <div class="col">
                 <h3>Description:</h3>
                 <h4 class="indented">Some description about the genre </h4>

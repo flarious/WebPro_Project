@@ -35,7 +35,7 @@
     display: inline-block;
 }
 
-.dropdown_content{
+.dropdownContent{
     display: none;
     position: absolute;
     text-align: left;
@@ -46,11 +46,11 @@
     color: black;
 }
 
-.dropdown:hover .dropdown_content{
+.dropdown:hover .dropdownContent{
     display: block;
 }
 
-.dropdown_content a:hover{
+.dropdownContent a:hover{
     color: black;
     text-decoration: underline;
 }

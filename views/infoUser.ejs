@@ -4,50 +4,87 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
+<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/info_content.css">
 
 <div id="content">
     <div id="background" class="row">
-        <p class="easter">EASTER EGG</p>
+        <p class="hidden forBackground">bg</p>
     </div>
-    <div id="info_page" class="row">
+    <div id="infoPage" class="row">
         <div class="row align-items-center">
             <div class="col-2">
-                <img class="disc" src="/temp_songIcon.png"/>
+                <img class="infoImage" src="/temp_userIcon.png"/>
             </div>
             <div class="col-8">
                 <h1>User</h1>
             </div>
             <div class="col-2">
-                <img class="item_button edit" src="/edit.png"/>
+                <img class="itemButton edit" src="/edit.png"/>
             </div>
         </div>
-        <div id="sub_info" class="row">
+        <div id="subInfo" class="row">
             <div class="row">
-                <div class="col-3">
-                    <h3 class="difSize_oneLine">Age: </h3>
-                    <h4 class="difSize_oneLine">age</h4>
-                </div>
-                <div class="col-9">
-                    <h3 class="difSize_oneLine">Gender: </h3>
-                    <h4 class="difSize_oneLine">gender</h4>
+                <div class="col">
+                    <h1>Favorite songs</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <h3>Most listened to:</h3>
-                    <div class="indented">
-                        <h4 class="difSize_oneLine">Songs: </h4>
-                        <h5 class="difSize_oneLine">song_1, song_2, song_3</h5>
-                        <br>
-                        <h4 class="difSize_oneLine">Artists: </h4>
-                        <h5 class="difSize_oneLine">artist_1, artist_2, artist_3</h5>
-                        <br>
-                        <h4 class="difSize_oneLine">Genres: </h4>
-                        <h5 class="difSize_oneLine">genre_1, genre_2, genre_3</h5>
+                    <h1>Favorite artists</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
                     </div>
-                    
-                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1>Favorite genres</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
+                    </div>
                 </div>
             </div>
         </div>
