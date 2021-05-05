@@ -7,7 +7,7 @@
     border: 2.4px solid black;
 }
 
-#logo{
+#lettermark{
     padding: 0 0 0 1.5%;
     font-family: 'Orbitron', cursive;
 }
@@ -17,16 +17,16 @@
     margin: 0 0 0 3%;
 }
 
-.user_button{
+.userButton{
     background-color: #f1d1d1;
 }
 
-#user_icon{
+#userIcon{
     height: 40px;
     width: 40px;
 }
 
-#user_drop{
+#userDrop{
     height: 30px;
     width: 30px;
 }

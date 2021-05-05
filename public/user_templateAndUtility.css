@@ -19,7 +19,7 @@ body:before{
     background-size: cover;
 }
 
-#main{
+#background{
     position: relative;
     margin: 0px 5% 0px 5%;
 }

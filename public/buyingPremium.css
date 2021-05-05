@@ -1,0 +1,40 @@
+#fullPageBody{
+    position: relative;
+    top: 8vh;
+    left: -1.5vh;
+    height: 92vh;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(241,209,209,1) 0%, rgba(250,242,242,1) 100%);
+    border: 2.4px solid black;
+}
+
+#content{
+    margin: auto;
+    width: 60%;
+    padding: 50px;
+    text-align: center;
+}
+
+.imgLogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 60%;
+}
+
+#content .row{
+    margin: 20px 0px;
+}
+
+.item{
+    padding-top: 30px;
+    border-radius: 25px;
+    background-color: #7d5a5a; 
+    height: 120px;
+    margin: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
