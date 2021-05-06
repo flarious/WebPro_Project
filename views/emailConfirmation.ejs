@@ -1,0 +1,45 @@
+<%- include('partials/header_user.ejs') %>
+<link rel="stylesheet" href="emailConfirmation_content.css">
+
+<div id="body" class="row">
+    <div class="col-6">
+    </div>
+    <div id="mainSection" class="col-6">
+        <div id="mainContent">
+            <div id="FormDescription" class="row">
+                <h2 class="middleText">CONFIRM EMAIL</h2>
+                <p>
+                    Type in your email then click "sent", you will get a "Verification code".<br>
+                    Type in the verification code to proceed.
+                </p>
+            </div>
+            <div id="resetPasswordForm" class="row">
+                <div class="form">
+                    <div class="row">
+                        <div class="col-8">
+                            <input class="fullSize" id="email" type="text" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-4">
+                            <button class="fullSize">Sent</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="fullSize" id="verify" type="text" name="verifyCode" placeholder="Verification Code">
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div id="resetPasswordButton" class="col-4">
+                    <a href="#"><button class="fullSize">Next</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer_contentNoSidebar.ejs') %>

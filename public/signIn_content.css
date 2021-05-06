@@ -1,29 +1,9 @@
-#mainSection{
-    width: 30%;
-    margin: auto;
-    color: white;
-    background-color: #7d5a5a;
-    border-radius: 50px;
-}
-
 #mainSection a{
     color: #85eaff;
 }
 
 #mainSection a:hover{
     color: #00d5ff;
-}
-
-#mainContent{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#mainContent .row{
-    margin: 10px 0;
 }
 
 .imgLogo{

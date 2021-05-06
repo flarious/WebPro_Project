@@ -1,0 +1,33 @@
+<%- include('partials/header_user.ejs') %>
+
+<div id="body" class="row">
+    <div id="quote" class="col-6">
+        <h3 class="blockDisplay leftSideText">"Music is for everyone</h3>
+        <h3 class="blockDisplay middleText">It doesn't care about</h3>
+        <h3 class="blockDisplay rightSideText">gender or age"</h3>
+    </div>
+    <div id="mainSection" class="col-6">
+        <div id="mainContent">
+            <h2 class="middleText">REGISTER</h2>
+            <div id="signUpForm" class="row">
+                <div class="form">
+                    <input class="fullSize" id="username" type="text" name="username" placeholder="Username">
+                    <p class="notVital hidden">space</p>
+                    <input class="fullSize" id="password" type="text" name="password" placeholder="Password">
+                    <p class="notVital hidden">space</p>
+                    <input class="fullSize" id="confirmPassword" type="text" name="rePassword" placeholder="Confirm Password">
+                    <p class="notVital hidden">space</p>
+                    <input class="fullSize" id="email" type="text" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                </div>
+                <div id="signUpButton" class="col-4">
+                    <a href="#"><button class="fullSize">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer_contentNoSidebar.ejs') %>

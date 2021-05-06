@@ -71,6 +71,22 @@ app.get('/signIn', function(req, res){
     res.render("signIn.ejs");
 });
 
+app.get('/signUp', function(req, res){
+    res.render("signUp.ejs");
+});
+
+app.get('/resetPassword', function(req, res){
+    res.render("resetPassword.ejs");
+});
+
+app.get('/changePassword', function(req, res){
+    res.render("changePassword.ejs");
+});
+
+app.get('/confirmEmail', function(req, res){
+    res.render("emailConfirmation.ejs");
+});
+
 app.listen('3000', function(req, res){
     console.log("Server is running");
 });

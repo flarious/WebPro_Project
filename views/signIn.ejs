@@ -1,4 +1,5 @@
-<%- include('partials/header_signIn.ejs') %>
+<%- include('partials/header_user.ejs') %>
+<link rel="stylesheet" href="/signIn_content.css">
 
 <div id="body" class="row">
     <div id="quote" class="col-6">
@@ -10,12 +11,12 @@
     <div id="mainSection" class="col-6">
         <div id="mainContent">
             <div id="logo" class="row">
-                <img class="imgLogo" src="webLogo.png"/>
+                <img class="imgLogo" src="/webLogo.png"/>
             </div>
             <div id="signInForm" class="row">
-                <div>
+                <div class="form">
                     <input class="fullSize" id="username" type="text" name="username" placeholder="Username">
-                    <a href="#" class="notVital inlineBlockDisplay rightSideText fullSize">Forgot Password?</a><br>
+                    <a href="#" class="notVital rightSideText">Forgot Password?</a>
                     <input class="fullSize" id="password" type="text" name="password" placeholder="Password">
                 </div>
             </div>
