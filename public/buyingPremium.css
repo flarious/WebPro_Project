@@ -1,4 +1,4 @@
-#fullPageBody{
+#contentBackground{
     position: relative;
     top: 8vh;
     left: -1.5vh;
@@ -10,8 +10,8 @@
 
 #content{
     margin: auto;
-    width: 60%;
-    padding: 50px;
+    width: 50%;
+    padding-top: 5%;
     text-align: center;
 }
 
@@ -27,14 +27,10 @@
     margin: 20px 0px;
 }
 
-.item{
+.choice{
     padding-top: 30px;
     border-radius: 25px;
     background-color: #7d5a5a; 
     height: 120px;
     margin: 10px;
-}
-
-.bold{
-    font-weight: bold;
 }

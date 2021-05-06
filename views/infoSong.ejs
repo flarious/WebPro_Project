@@ -4,22 +4,20 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
-<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/info_content.css">
 
-<div id="sidebarContent">
+<div id="contentBackground">
     <div id="content">
-        <div id="background" class="row">
-            <p class="hidden forBackground">bg</p>
+        <div id="infoBackground" class="row">
         </div>
-        <div id="infoPage" class="row">
-            <div class="row align-items-center">
+        <div id="infoContent" class="row">
+            <div id="infoHeader" class="row align-items-center">
                 <div class="col-2">
                     <img class="infoImage" src="/temp_songIcon.png"/>
                 </div>
                 <div class="col-8">
-                    <h1 class="difSize_oneLine">Title</h1>
-                    <h3 class="difSize_oneLine">- Artist Name</h3>
+                    <h1 class="sameLineText">Title</h1>
+                    <h3 class="sameLineText">- Artist Name</h3>
                     <h5>Genre</h5>
                 </div>
                 <div class="col-1">
@@ -29,8 +27,8 @@
                     <img class="itemButton download free" src="/download.png"/>
                 </div>
             </div>
-            <div id="subInfo" class="row">
-                <div class="col">
+            <div id="infoBody" class="row">
+                <div id="lyric" class="col">
                     <h3>Lyric:</h3>
                     <h4 class="indented">Some lyric for this song</h4>
                 </div>
@@ -39,4 +37,4 @@
     </div>
 </div>
 
-<%- include('partials/footer.ejs') %>
+<%- include('partials/footer_contentWithSidebar.ejs') %>

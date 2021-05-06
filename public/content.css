@@ -1,4 +1,4 @@
-#contentWithSidebar{
+#contentBackground{
     position: relative;
     top: 8vh;
     left: 25vh;
@@ -6,3 +6,4 @@
     background: linear-gradient(180deg, rgba(241,209,209,1) 0%, rgba(250,242,242,1) 100%);
     border: 2.4px solid black;
 }
+

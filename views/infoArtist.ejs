@@ -4,16 +4,14 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
-<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/info_content.css">
 
-<div id="sidebarContent">
+<div id="contentBackground">
     <div id="content">
-        <div id="background" class="row">
-            <p class="hidden forBackground">bg</p>
+        <div id="infoBackground" class="row">
         </div>
-        <div id="infoPage" class="row">
-            <div class="row align-items-center">
+        <div id="infoContent" class="row">
+            <div id="infoHeader" class="row align-items-center">
                 <div class="col-2">
                     <img class="infoImage" src="/temp_artistIcon.png"/>
                 </div>
@@ -24,20 +22,20 @@
                     <img class="itemButton favorite" src="/favoriteIcon_favorite.png"/>
                 </div>
             </div>
-            <div id="subInfo" class="row">
-                <div class="row">
+            <div id="infoBody" class="row">
+                <div id="genreList" class="row">
                     <div class="col">
-                        <h3 class="difSize_oneLine">Genre: </h3>
-                        <h4 class="difSize_oneLine">genre</h4>
+                        <h3 class="sameLineText">Genre: </h3>
+                        <h4 class="sameLineText">genre</h4>
                     </div>
                 </div>
-                <div class="row">
+                <div id="contacts" class="row">
                     <div class="col">
                         <h3>Contact:</h3>
                         <div class="indented">
-                            <h5><img class="socialMedia" src="/facebook_icon.png"/> : facebook account / fan page</h5>
-                            <h5><img class="socialMedia" src="/youtube_icon.png"/> : youtube channel</h5>
-                            <h5><img class="socialMedia" src="/instagram_icon.png"/> : Instagram account</h5>
+                            <h5><img class="socialMedia" src="/facebookIcon.png"/> : facebook account / fan page</h5>
+                            <h5><img class="socialMedia" src="/youtubeIcon.png"/> : youtube channel</h5>
+                            <h5><img class="socialMedia" src="/instagramIcon.png"/> : Instagram account</h5>
                         </div>
                     </div>
                 </div>
@@ -46,4 +44,4 @@
     </div>
 </div>
 
-<%- include('partials/footer.ejs') %>
+<%- include('partials/footer_contentWithSidebar.ejs') %>

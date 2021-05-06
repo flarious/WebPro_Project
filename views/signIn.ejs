@@ -1,1 +1,35 @@
 <%- include('partials/header_signIn.ejs') %>
+
+<div id="body" class="row">
+    <div id="quote" class="col-6">
+        <h3 class="blockDisplay leftSideText">"Music is the</h3>
+        <h3 class="blockDisplay middleText">universal langauge</h3>
+        <h3 class="blockDisplay rightSideText">of mankind"</h3>
+        <p class="inlineBlockDisplay rightSideText fullSize">- Henry Wadsworth Longfellow</p>
+    </div>
+    <div id="mainSection" class="col-6">
+        <div id="mainContent">
+            <div id="logo" class="row">
+                <img class="imgLogo" src="webLogo.png"/>
+            </div>
+            <div id="signInForm" class="row">
+                <div>
+                    <input class="fullSize" id="username" type="text" name="username" placeholder="Username">
+                    <a href="#" class="notVital inlineBlockDisplay rightSideText fullSize">Forgot Password?</a><br>
+                    <input class="fullSize" id="password" type="text" name="password" placeholder="Password">
+                </div>
+            </div>
+            <div class="row">
+                <div id="register" class="col-8">
+                    <p class="notVital sameLineText">Don't have one?</p>
+                    <a class="notVital sameLineText" href="#">Register Now</a>
+                </div>
+                <div id="signInButton" class="col-4">
+                    <a href="#"><button class="fullSize">Sign In</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer_contentNoSidebar.ejs') %>

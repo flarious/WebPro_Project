@@ -4,17 +4,15 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
-<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/playlist_content.css">
-<script src="/searchResult_button.js" defer></script>
+<script src="/itemButton.js" defer></script>
 
-<div id="sidebarContent">
+<div id="contentBackground">
     <div id="content">
-        <div id="background" class="row">
-            <p class="hidden forBackground">bg</p>
+        <div id="infoBackground" class="row">
         </div>
-        <div id="infoPage">
-            <h1>Playlist name</h1>
+        <div id="playlistContent">
+            <h1 class="playlistName">Playlist name</h1>
             <div class="row align-items-center item">
                 <div class="col-2">
                     <img class="itemImage" src="/temp_songIcon.png"/>
@@ -109,4 +107,4 @@
     </div>
 </div>
 
-<%- include('partials/footer.ejs') %>
+<%- include('partials/footer_contentWithSidebar.ejs') %>

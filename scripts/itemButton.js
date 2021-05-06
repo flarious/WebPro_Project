@@ -38,7 +38,7 @@ function toggleFavorite()
 function buyPremium()
 {
     let hovered = event.currentTarget;
-    hovered.title = "Please buy premium to use this feature";
+    hovered.title = "Please upgrade to premium to use this feature";
 }
 
 function download()

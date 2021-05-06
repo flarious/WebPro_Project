@@ -4,16 +4,14 @@
     <%- include('partials/header_user_login.ejs') %>
 <% } %>
 <%- include('partials/sidebar_user.ejs') %>
-<link rel="stylesheet" href="/fake_background.css">
 <link rel="stylesheet" href="/info_content.css">
 
-<div id="sidebarContent">
+<div id="contentBackground">
     <div id="content">
-        <div id="background" class="row">
-            <p class="hidden forBackground">bg</p>
+        <div id="infoBackground" class="row">
         </div>
-        <div id="infoPage" class="row">
-            <div class="row align-items-center">
+        <div id="infoContent" class="row">
+            <div id="infoHeader" class="row align-items-center">
                 <div class="col-2">
                     <img class="infoImage" src="/temp_userIcon.png"/>
                     <button id="changePic">Choose Photo</button>
@@ -25,92 +23,83 @@
                     <img class="itemButton saveEdit" src="/save.png"/>
                 </div>
             </div>
-            <div id="subInfo" class="row">
-                <div class="row">
-                    <div class="col">
-                        <h1>Favorite songs</h1>
-                        <div class="row">
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_songIcon.png"/>
-                                <h3>Title</h3>
-                                <p>Artist Name</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_songIcon.png"/>
-                                <h3>Title</h3>
-                                <p>Artist Name</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_songIcon.png"/>
-                                <h3>Title</h3>
-                                <p>Artist Name</p>
+            <div id="infoBody" class="row">
+                <div id="favoriteSongs" class="row">
+                    <h1 class="groupName">Favorite songs</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
                         </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_songIcon.png"/>
+                            <h3>Title</h3>
+                            <p>Artist Name</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>Favorite artists</h1>
-                        <div class="row">
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_artistIcon.png"/>
-                                <h3>Artist Name</h3>
-                                <p class="hidden">bg</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_artistIcon.png"/>
-                                <h3>Artist Name</h3>
-                                <p class="hidden">bg</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_artistIcon.png"/>
-                                <h3>Artist Name</h3>
-                                <p class="hidden">bg</p>
+                <div id="favoriteArtists" class="row">
+                    <h1 class="groupName">Favorite artists</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
                         </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_artistIcon.png"/>
+                            <h3>Artist Name</h3>
+                            <p class="hidden">bg</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>Favorite genres</h1>
-                        <div class="row">
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_genreIcon.png"/>
-                                <h3>Genre</h3>
-                                <p class="hidden">bg</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_genreIcon.png"/>
-                                <h3>Genre</h3>
-                                <p class="hidden">bg</p>
-                            </div>
-                            <div class="col-4 item">
-                                <img class="itemImage" src="/temp_genreIcon.png"/>
-                                <h3>Genre</h3>
-                                <p class="hidden">bg</p>
+                <div id="favoriteGenres" class="row">
+                    <h1 class="groupName">Favorite genres</h1>
+                    <div class="row">
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
                         </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
+                        </div>
+                        <div class="col-4 item">
+                            <img class="itemImage" src="/temp_genreIcon.png"/>
+                            <h3>Genre</h3>
+                            <p class="hidden">bg</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <h1>Personal information</h1>
-                        <div class="indented">
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Email: userEmail@email.something</h3>
-                                </div>
-                                <div class="col-3">
-                                    <button id="changeMail">Change Email</button>
-                                </div>
+                <div id="userInfo" class="row">
+                    <h1>Personal information</h1>
+                    <div class="indented">
+                        <div id="userEmail" class="row">
+                            <div class="col">
+                                <h3>Email: userEmail@email.something</h3>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <h3>Password:</h3>
-                                </div>
-                                <div class="col-3">
-                                    <button id="changePass">Change Password</button>
-                                </div>
+                            <div class="col-3">
+                                <button id="changeMail">Change Email</button>
                             </div>
                         </div>
-                        
+                        <div id="userPassword" class="row">
+                            <div class="col">
+                                <h3>Password:</h3>
+                            </div>
+                            <div class="col-3">
+                                <button id="changePass">Change Password</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,4 +107,4 @@
     </div>
 </div>
 
-<%- include('partials/footer.ejs') %>
+<%- include('partials/footer_contentWithSidebar.ejs') %>
