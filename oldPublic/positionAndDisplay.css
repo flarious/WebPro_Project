@@ -1,0 +1,47 @@
+#page{
+    position: relative;
+    margin: 0px 5% 0px 5%;
+}
+
+.indented{
+    margin: 0px 5%;
+}
+
+.paddedTop{
+    padding-top: 15%;
+}
+
+.horCenterContent{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.verCenterContent{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.blockDisplay{
+    display: block;
+}
+
+.inlineBlockDisplay{
+    display: inline-block;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.fullSize{
+    width: 100%
+}
+
+.blur{
+    opacity: 0.6;
+}
+
+.unscrollable{
+    overflow: hidden;
+}

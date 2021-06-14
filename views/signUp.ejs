@@ -1,33 +1,15 @@
-<%- include('partials/header_user.ejs') %>
+<%- include("partials/header_signIn.ejs") %>
 
-<div id="body" class="row">
-    <div id="quote" class="col-6">
-        <h3 class="blockDisplay leftSideText">"Music is for everyone</h3>
-        <h3 class="blockDisplay middleText">It doesn't care about</h3>
-        <h3 class="blockDisplay rightSideText">gender or age"</h3>
-    </div>
-    <div id="mainSection" class="col-6">
-        <div id="mainContent">
-            <h2 class="middleText">REGISTER</h2>
-            <div id="signUpForm" class="row">
-                <div class="form">
-                    <input class="fullSize" id="username" type="text" name="username" placeholder="Username">
-                    <p class="notVital hidden">space</p>
-                    <input class="fullSize" id="password" type="text" name="password" placeholder="Password">
-                    <p class="notVital hidden">space</p>
-                    <input class="fullSize" id="confirmPassword" type="text" name="rePassword" placeholder="Confirm Password">
-                    <p class="notVital hidden">space</p>
-                    <input class="fullSize" id="email" type="text" name="email" placeholder="Email">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-8">
-                </div>
-                <div id="signUpButton" class="col-4">
-                    <a href="#"><button class="fullSize">Sign Up</button></a>
-            </div>
-        </div>
-    </div>
+<div class="card bg-lWood text-white-75">
+    <form class="form-signin" action="/signUp" method="POST">
+        <img class="w-75 mb-4" src="/resources/images/webLogo.png" alt="logo">
+        <h1 class="h3 mb-3 font-weight-bold">Sign Up</h1>
+        <input type="text" class="form-control bg-wSmoke" name="username" placeholder="Username">
+        <input type="password" class="form-control bg-wSmoke" name="password" placeholder="Password">
+        <input type="password" class="form-control bg-wSmoke" name="rePassword" placeholder="Confirm your password">
+        <input type="email" class="form-control bg-wSmoke" name="email" placeholder="Email">
+        <button class="btn btn-lg btn-light btn-block w-100 bg-vIce" type="submit">Sign Up</button>
+    </form>
 </div>
 
-<%- include('partials/footer_contentNoSidebar.ejs') %>
+<%- include("partials/footer.ejs") %>

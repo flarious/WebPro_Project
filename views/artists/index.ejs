@@ -1,0 +1,47 @@
+<%- include("../partials/header_admin.ejs") %>
+
+<main role="main" class="col-md-12 px-4 bg-customGradient text-black-75">
+    <div class="row align-items-center">
+        <div class="col-lg-11 col-sm-10 col-8">
+            <div class="input-group input-group-lg">
+                <div class="col-lg-1 col-sm-2 d-none d-sm-block">
+                    <h5>Search: </h5>
+                </div>
+                <div class="col-lg-11 col-sm-10 col-12">
+                    <form class="w-100" action="/artists/search" method="POST">
+                        <div class="input-group input-group-lg">
+                            <input class="w-100 form-control" type="text" name="searched" placeholder="Search by artist name" aria-label="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-sm-2 col-4">
+            <a href="/artists/new"><img title="New artist"src="/resources/images/new.png" width="100%" height="100%"/></a>
+        </div>
+    </div>
+
+    <% artists.sort(function(a, b){ return a.artistName.localeCompare(b.artistName)}); %>
+    <% artists.forEach(function(artist){ %>
+        <div class="row align-items-center justify-content-evenly item item-full my-3 mx-1">
+            <div class="col-md-2 col-sm-4">
+                <a href="/artists/<%= artist.artistName %>">
+                    <img class="obj-fit-sDown" src="<%= artist.artistImage %>" width="100%" height="200px"/>
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-8">
+                <a href="/artists/<%= artist.artistName %>"><h3 class="ellipsis"><%= artist.artistName %></h3></a>
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <a href="/artists/<%= artist.artistName %>/edit"><img title="Edit this artist" src="/resources/images/edit.png" width="100%" height="100%"/></a>
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <form onsubmit="return confirm('Are you sure you want to delete?');" action = "/artists/<%= artist.artistName %>?_method=DELETE" method="POST">
+                    <input type="image" title="Delete this artist" src="/resources/images/delete.png" width="100%" height="100%"/>
+                </form>
+            </div>
+        </div>
+    <% }) %>
+</main>
+
+<%- include("../partials/footer.ejs") %>

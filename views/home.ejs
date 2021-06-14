@@ -1,83 +1,58 @@
-<% if(user_id === "-1") { %>
-    <%- include('partials/header_clientFree.ejs') %>
-<% } else { %>
-    <%- include('partials/header_clientLogin.ejs') %>
-<% } %>
-<%- include('partials/sidebar_client.ejs') %>
-<link rel="stylesheet" href="/home_content.css">
+<%- include("partials/header_client.ejs") %>
+<%- include("partials/sidebar_home.ejs") %>
 
-<div id="contentBackground">
-    <div id="content">
-        <div class="row playlist">
-            <h1 class="groupName">Recommend for you</h1>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
+<main role="main" class="col-md-10 ms-md-auto px-4 bg-customGradient text-black-75">
+    <div class="row">
+        <h1>Top Hits</h1>
+        <% songs.sort(function(a, b){return b.popularity/(new Date(Date.now()) - new Date(b.releaseDate)) - a.popularity/(new Date(Date.now()) - new Date(a.releaseDate))}) %>
+        <% for(let i = 0; i < 4; i++){ %>
+            <div class="col-xxl-3 col-xl-4 col-md-6 col">
+                <div class="item item-sub my-2">
+                    <a href="/songs/<%= songs[i].songName %>">
+                        <img src="<%= songs[i].songImage %>" width="200px" height="200px" />
+                        <h3 class="ellipsis"><%= songs[i].songName %></h3>
+                    </a>
+                    <a href="/artists/<%= songs[i].artistName %>">
+                        <h4 class="ellipsis"><%= songs[i].artistName %></h4>
+                    </a>
+                </div>
             </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-        </div>
-        <div class="row playlist">
-            <h1 class="playlistName">Top Hits</h1>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-        </div>
-        <div class="row playlist">
-            <h1 class="playlistName">New Releases</h1>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-            <div class="col-3 item">
-                <img class="itemImage" src="/temp_songIcon.png"/>
-                <h3>Title</h3>
-                <p>Artist Name</p>
-            </div>
-        </div>
+        <% } %>
     </div>
-</div>
+    <div class="row">
+        <h1>New Release</h1>
+        <% songs.sort(function(a, b){return b.releaseDate - a.releaseDate}) %>
+        <% for(let i = 0; i < 4; i++){ %>
+            <div class="col-xxl-3 col-xl-4 col-md-6 col">
+                <div class="item item-sub my-2">
+                    <a href="/songs/<%= songs[i].songName %>">
+                        <img src="<%= songs[i].songImage %>" width="200px" height="200px" />
+                        <h3 class="ellipsis"><%= songs[i].songName %></h3>
+                    </a>
+                    <a href="/artists/<%= songs[i].artistName %>">
+                        <h4 class="ellipsis"><%= songs[i].artistName %></h4>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <div class="row">
+        <h1>Songs Through Time</h1>
+        <% songs.sort(function(a, b){return a.releaseDate - b.releaseDate}) %>
+        <% for(let i = 0; i < 4; i++){ %>
+            <div class="col-xxl-3 col-xl-4 col-md-6 col">
+                <div class="item item-sub my-2">
+                    <a href="/songs/<%= songs[i].songName %>">
+                        <img src="<%= songs[i].songImage %>" width="200px" height="200px" />
+                        <h3 class="ellipsis"><%= songs[i].songName %></h3>
+                    </a>
+                    <a href="/artists/<%= songs[i].artistName %>">
+                        <h4 class="ellipsis"><%= songs[i].artistName %></h4>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
 
-<%- include('partials/footer_contentWithSidebar.ejs') %>
+<%- include("partials/footer.ejs") %>

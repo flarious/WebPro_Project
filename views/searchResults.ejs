@@ -1,113 +1,70 @@
-<% if(user_id === "-1") { %>
-    <%- include('partials/header_clientFree.ejs') %>
-<% } else { %>
-    <%- include('partials/header_clientLogin.ejs') %>
-<% } %>
-<%- include('partials/sidebar_client.ejs') %>
-<link rel="stylesheet" href="/searchResult_content.css">
-<script src="/itemButton.js" defer></script>
+<%- include("partials/header_client.ejs") %>
+<%- include("partials/sidebar.ejs") %>
 
-<div id="contentBackground">
-    <div id="content">
-        <div id="sortResult">
-            <label>Sort by: </label>
-            <input type="radio" name="sortBy" value="Title"><label> Title </label>
-            <input type="radio" name="sortBy" value="Artist"><label> Artist </label>
+<main role="main" class="col-md-10 ms-sm-auto px-4 bg-customGradient text-black-75">
+    <h1>Sort by: </h1>
+    <form action="/sortSearch" method="POST">
+        <% if(sortBySong){ %>
+            <input class="sort" type="radio" name="sortBy" value="sortBySong" onclick="document.querySelector('.url').value = location.pathname; this.form.submit()" checked>
+            <label> Title </label>
+            <input class="sort" type="radio" name="sortBy" value="sortByArtist" onclick="document.querySelector('.url').value = location.pathname; this.form.submit()">
+            <label> Artist </label>
+        <% } else { %>
+            <input class="sort" type="radio" name="sortBy" value="sortBySong" onclick="document.querySelector('.url').value = location.pathname; this.form.submit()">
+            <label> Title </label>
+            <input class="sort" type="radio" name="sortBy" value="sortByArtist" onclick="document.querySelector('.url').value = location.pathname; this.form.submit()" checked>
+            <label> Artist </label>
+        <% } %>
+        <input class="url" style="visibility: hidden;" type="text" name="url" value="">
+    </form>
+
+    <% if(sortBySong) { %>
+        <% songs.sort(function(a, b){ return a.songName.localeCompare(b.songName)}); %>
+    <% } else { %>
+        <% songs.sort(function(a, b){ return a.artistName.localeCompare(b.artistName)}); %>
+    <% } %>
+    <% songs.forEach(function(song){ %>
+        <div class="row align-items-center justify-content-evenly item item-full my-3">
+            <div class="col-md-2 col-sm-4">
+                <a href="/songs/<%= song.songName %>">
+                    <img class="obj-fit-sDown" src="<%= song.songImage %>" width="100%" height="200px"/>
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-8">
+                <a href="/songs/<%= song.songName %>"><h1 class="ellipsis"><%= song.songName %></h1></a>
+                <a href="/artists/<%= song.artistName %>"><h3 class="ellipsis"><%= song.artistName %></h3></a>
+            </div>
+            <% if(!currentUser){ %>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <img title="Please sign in to favorite this song" src="/resources/images/favoriteIcon_not-favorite.png" width="100%" height="100%">
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <img title="Please sign in and buy our premium package to download the song" src="/resources/images/download.png" width="80%" height="80%">
+            </div>
+            <% } else { %>
+                <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                    <% if(!currentUser.favSongs.includes(song._id)){ %>
+                        <form action="/songs/favorite/<%= song._id %>?_method=PUT" method="POST">
+                            <input type="image" title="Favorite" src="/resources/images/favoriteIcon_not-favorite.png" width="100%" height="100%"/>
+                        </form>
+                    <% } else { %>
+                        <form action="/songs/unfavorite/<%= song._id %>?_method=PUT" method="POST">
+                            <input type="image" title="Unfavorite" src="/resources/images/favoriteIcon_favorite.png" width="100%" height="100%"/>
+                        </form>
+                    <% } %>
+                </div>
+                <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <% if(currentUser.rank === "user"){ %>
+                    <img title="Please buy our premium package to download this song" src="/resources/images/download.png" width="80%" height="80%">
+                <% } else { %>
+                    <a href="<%= song.songFile %>" download="<%= song.artistName %> - <%= song.songName %>">
+                        <img title="Download song" src="/resources/images/download.png" width="80%" height="80%"/>
+                    </a>
+                <% } %>
+                </div>
+            <% } %>
         </div>
-        <div id="results">
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton not-favorite" src="/favoriteIcon_not-favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton favorite" src="/favoriteIcon_favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton favorite" src="/favoriteIcon_favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton not-favorite" src="/favoriteIcon_not-favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton not-favorite" src="/favoriteIcon_not-favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-            <div class="row align-items-center item">
-                <div class="col-2">
-                    <img class="itemImage" src="/temp_songIcon.png"/>
-                </div>
-                <div class="col">
-                    <h3>Title</h3>
-                    <p>Artist name - Genre</p>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton favorite" src="/favoriteIcon_favorite.png"/>
-                </div>
-                <div class="col-1">
-                    <img class="itemButton download free" src="/download.png"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <% }) %>
+</main>
 
-
-<%- include('partials/footer_contentWithSidebar.ejs') %>
+<%- include("partials/footer.ejs") %>

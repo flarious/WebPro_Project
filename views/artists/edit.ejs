@@ -1,0 +1,53 @@
+<%- include("../partials/header_admin.ejs") %>
+<script src="../scripts/preview.js"></script>
+
+<main role="main" class="col-md-12 px-4 bg-customGradient text-black-75">
+    <form action="/artists/<%= artist.artistName %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="row align-items-center justify-content-center my-3">
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-8">
+                <img class="previewImage obj-fit-sDown" style="border: 2px solid black;" src="<%= artist.artistImage %>" width="100%" height="200px"/>
+                <input type="file" class="uploadImage d-none" onchange="previewImage()" name="artistImage" accept="image/*">
+                <input type="button" class="w-100" value="Browse..." onclick="document.querySelector('.uploadImage').click();" />
+            </div>
+            <div class="col-xl-8 col-lg-9 col-sm-8 col-12">
+                <div class="input-group input-group-lg">
+                    <div class="col-xl-2 col-lg-3 col-sm-4 col-3">
+                        <h5>Artist's name: </h5>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-sm-8 col-9">
+                        <input type="text" class="w-100 form-control" name="updatedArtist[artistName]" placeholder="<%= artist.artistName %>" value="<%= artist.artistName %>">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <h3>Artist's information</h3>
+            <div class="input-group input-group-lg">
+                <div class="col-xxl-1 col-md-2 col-3">
+                    <h5>Artist's FB: </h5>
+                </div>
+                <div class="col-xxl-11 col-md-10 col-9">
+                    <input type="text" class="w-100 form-control" name="contacts[FB]" placeholder="<%= artist.contacts.FB %>" value="<%= artist.contacts.FB %>">
+                </div>
+                <div class="col-xxl-1 col-md-2 col-3">
+                    <h5>Artist's IG: </h5>
+                </div>
+                <div class="col-xxl-11 col-md-10 col-9">
+                    <input type="text" class="w-100 form-control" name="contacts[IG]" placeholder="<%= artist.contacts.IG %>" value="<%= artist.contacts.IG %>">
+                </div>
+                <div class="col-xxl-1 col-md-2 col-3">
+                    <h5>Artist's YT: </h5>
+                </div>
+                <div class="col-xxl-11 col-md-10 col-9">
+                    <input type="text" class="w-100 form-control" name="contacts[YT]" placeholder="<%= artist.contacts.YT %>" value="<%= artist.contacts.YT %>">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-xl-2 col-md-4 col-sm-6 col-12">
+                <input type="submit" class="btn btn-lg btn-light btn-block w-100 bg-vIce" value="Edit artist">
+            </div>
+        </div>
+    </form>
+</main>
+<%- include("../partials/footer.ejs") %>

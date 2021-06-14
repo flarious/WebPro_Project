@@ -1,0 +1,66 @@
+<%- include("../partials/header_admin.ejs") %>
+<script src="../scripts/preview.js"></script>
+
+<% var date = song.releaseDate.toISOString().split("T")[0] %>
+
+<main role="main" class="col-md-12 px-4 bg-customGradient text-black-75">
+    <form action="/songs/<%= song.songName %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="row align-items-center justify-content-center my-3">
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-8">
+                <img class="previewImage obj-fit-sDown" style="border: 2px solid black;" src="<%= song.songImage %>" width="100%" height="200px"/>
+                <input type="file" class="uploadImage d-none" onchange="previewImage()" name="songImage" accept="image/*">
+                <input type="button" class="w-100" value="Browse..." onclick="document.querySelector('.uploadImage').click();" />
+            </div>
+            <div class="col-xl-8 col-lg-9 col-sm-8 col-12">
+                <div class="input-group input-group-lg">
+                    <div class="col-xl-2 col-lg-3 col-sm-4 col-3">
+                        <h5>Song's name: </h5>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-sm-8 col-9">
+                        <input type="text" class="w-100 form-control" name="updatedSong[songName]" placeholder="<%= song.songName %>" value="<%= song.songName %>">
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-4 col-3">
+                        <h5>Song's artist: </h5>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-sm-8 col-9">
+                        <input type="text" class="w-100 form-control" name="updatedSong[artistName]" placeholder="<%= song.artistName %>" value="<%= song.artistName %>">
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-4 col-3">
+                        <h5>Song's file: </h5>
+                    </div>
+                    <div class="col-xl-10 col-lg-9 col-sm-8 col-9">
+                        <input type="file" class="w-100 form-control" name="songFile" accept="audio/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Song's information</h3>
+        <div class="row align-items-center">
+            <div class="col-md-6 col-12">
+                <h4>Song's views</h4>
+                <div class="input-group input-group-lg">
+                    <input type="number" class="w-100 form-control" min="0" name="updatedSong[popularity]" placeholder="<%= song.popularity %>" value="<%= song.popularity %>">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <h4>Release date</h4>
+                <div class="input-group input-group-lg">
+                    <input type="date" class="w-100 form-control" name="updatedSong[releaseDate]" value="<%= date %>">
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <h4 class="mt-0">Lyrics</h4>
+            <div class="col-12">
+                <textarea  class="form-control" name="newSong[songLyric]" rows="5"><%= song.songLyric %></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-xl-2 col-md-4 col-sm-6 col-12">
+                <input type="submit" class="btn btn-lg btn-light btn-block w-100 bg-vIce" value="Edit Song">
+            </div>
+        </div>
+    </form>
+        
+</main>
+<%- include("../partials/footer.ejs") %>

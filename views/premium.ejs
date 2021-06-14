@@ -1,0 +1,44 @@
+<%- include("partials/header_client.ejs") %>
+
+<main role="main" class="col-md-12 px-4 bg-customGradient text-black-75 text-center">
+    <div class="row justify-content-center mt-5 pt-5">
+        <div class="col">
+            <img class="w-25 mb-4" src="/resources/images/webLogo.png" alt="logo">
+        </div>
+    </div>
+    <h1>IN THE MOOD - ANYWHERE, ANYTIME</h1>
+    <h3>
+        with ORPHEUS+<br>
+        download any song and listen offline
+    </h3>
+    <form action="/premium?_method=PUT" method="POST">
+        <div class="row my-5">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <button type="submit" class="btn btn-lg btn-light btn-block w-100 py-5 bg-custom text-white-75">
+                    <h1>FREE TRIAL</h1>
+                    <h3>1 MONTH</h3>
+                </button>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <button type="submit" class="btn btn-lg btn-light btn-block w-100 py-5 bg-custom text-white-75">
+                    <h1>1 MONTH</h1>
+                    <h3>100 THB</h3>
+                </button>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <button type="submit" class="btn btn-lg btn-light btn-block w-100 py-5 bg-custom text-white-75">
+                    <h1>3 MONTHS</h1>
+                    <h3>250 THB</h3>
+                </button>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12">
+                <button type="submit" class="btn btn-lg btn-light btn-block w-100 py-5 bg-custom text-white-75">
+                    <h1>1 YEAR</h1>
+                    <h3>960 THB</h3>
+                </button>
+            </div>
+        </div>
+    </form>
+</main>
+
+<%- include("partials/footer.ejs") %>

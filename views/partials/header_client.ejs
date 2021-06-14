@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>Orpheus</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Bootstrap JS script bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="/template.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-2 col-sm-3 ps-3 d-none d-md-block me-0" href="/">Orpheus</a>
+        <div class="dropdown d-block d-md-none">
+            <a class="mx-3 nav-item dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Orpheus
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="/">Home</a></li>
+                <li><a class="dropdown-item" href="/playlists">Your playlists</a></li>
+                <% if(!currentUser) {%>
+                <% } else { %>
+                    <hr>
+                    <% if(currentUser.favSongs.length !== 0){ %>
+                        <li><a class="dropdown-item" href="/signOut">Sign Out</a></li>
+                    <% } %>
+                <% } %>
+            </ul>
+        </div>
+        <form class="w-25" action="/search" method="POST">
+            <input class="search form-control form-control-dark w-100" type="text" name="searched" placeholder="Search by song or artist name" aria-label="Search">
+        </form>
+        <% if(!currentUser){ %>
+            <a class="btn btn-secondary hover-lWood me-3 " href="/signIn">Sign In</a>
+        <% } else { %>
+            <div class="dropdown">
+                <a class="me-3 nav-item dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= currentUser.username %>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="/users/<%= currentUser._id %>">Profile</a></li>
+                    <li><a class="dropdown-item" href="/premium">Upgrade</a></li>
+                    <li><a class="dropdown-item" href="/signOut">Sign Out</a></li>
+                </ul>
+            </div>
+        <% } %>
+    </nav>

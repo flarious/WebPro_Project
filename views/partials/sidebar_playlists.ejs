@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-custom2 sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="/"><h5>Home</h5></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/playlists"><h5>Your playlists</h5></a></li>
+                    <hr>
+                    <% if(!currentUser) {%>
+                    <% } else { %>
+                        <% if(currentUser.favSongs.length !== 0){ %>
+                          <li class="nav-item"><a class="nav-link" href="/playlists/favorite"><h5 class="ellipsis">Favorites</h5></a></li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

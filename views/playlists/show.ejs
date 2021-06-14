@@ -1,0 +1,39 @@
+<%- include("../partials/header_client.ejs") %>
+<%- include("../partials/sidebar.ejs") %>
+    
+<main role="main" class="col-md-10 ms-sm-auto px-4 bg-customGradient text-black-75">
+    <h1>Favorites</h1>
+    <% playlist.favSongs.forEach(function(song){ %>
+        <div class="row align-items-center justify-content-evenly item item-full my-3">
+            <div class="col-md-2 col-sm-4">
+                <a href="/songs/<%= song.songName %>">
+                    <img src="<%= song.songImage %>" width="100%" height="100%"/>
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-8">
+                <a href="/songs/<%= song.songName %>"><h1 class="ellipsis"><%= song.songName %></h1></a>
+                <a href="/artists/<%= song.artistName %>"><h3 class="ellipsis"><%= song.artistName %></h3></a>
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+                <% if(!currentUser.favSongs.includes(song._id)){ %>
+                    <form action="/songs/favorite/<%= song._id %>?_method=PUT" method="POST">
+                        <input type="image" title="Favorite" src="/resources/images/favoriteIcon_not-favorite.png" width="100%" height="100%"/>
+                    </form>
+                <% } else { %>
+                    <form action="/songs/unfavorite/<%= song._id %>?_method=PUT" method="POST">
+                        <input type="image" title="Unfavorite" src="/resources/images/favoriteIcon_favorite.png" width="100%" height="100%"/>
+                    </form>
+                <% } %>
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-6">
+            <% if(currentUser.rank === "user"){ %>
+                <img title="Please buy our premium package to download this song" src="/resources/images/download.png" width="80%" height="80%">
+            <% } else { %>
+                <a href="<%= song.songFile %>" download="<%= song.artistName %> - <%= song.songName %>">
+                    <img title="Download song" src="/resources/images/download.png" width="80%" height="80%"/>
+                </a>
+            <% } %>
+            </div>
+        </div>
+    <% }) %>
+</main>

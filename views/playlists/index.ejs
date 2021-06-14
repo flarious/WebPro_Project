@@ -1,0 +1,24 @@
+<%- include("../partials/header_client.ejs") %>
+<%- include("../partials/sidebar_playlists.ejs") %>
+    
+<main role="main" class="col-md-10 ms-sm-auto px-4 bg-customGradient text-black-75">
+    <h1>Playlists</h1>
+    <% if(currentUser.favSongs.length !== 0) { %>
+        <div class="row align-items-center justify-content-end item item-full my-3">
+            <div class="col-xxl-11 col-lg-10 col-sm-9 col-12">
+                <a href="/playlists/favorite"><h1 class="ellipsis">Favorites</h1></a>
+            </div>
+            <div class="col-xxl-1 col-lg-2 col-sm-3 col-5">
+                <img src="resources/images/delete.png" width="100%" height="100%">
+            </div>
+        </div>
+    <% } else { %>
+        <h1 class="ms-3">No playlist found !!!</h1>
+        <div class="row justify-content-end">
+            <div class="col-lg-1 col-sm-2 col-4">
+                <img src="resources/images/new.png" width="100%" height="100%">
+            </div>
+        </div>
+    <% } %>
+    
+</main>
