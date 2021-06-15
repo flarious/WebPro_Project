@@ -61,23 +61,3 @@ body::before{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-
-.bg-vIce{
-    background-color: #f1d1d1;
-}
-
-.bg-lWood{
-    background-color: #7d5a5a;
-}
-
-.bg-tutu{
-    background-color: #f3e1e1;
-}
-
-.bg-wSmoke{
-    background-color: #faf2f2;
-}
-
-.text-white-75{
-    color: rgba(255, 255, 255, .75);
-}

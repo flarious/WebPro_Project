@@ -6,11 +6,8 @@
                     <li class="nav-item"><a class="nav-link" href="/"><h5>Home</h5></a></li>
                     <li class="nav-item"><a class="nav-link" href="/playlists"><h5>Your playlists</h5></a></li>
                     <hr>
-                    <% if(!currentUser) {%>
-                    <% } else { %>
-                        <% if(currentUser.favSongs.length !== 0){ %>
-                          <li class="nav-item"><a class="nav-link" href="/playlists/favorite"><h5 class="ellipsis">Favorites</h5></a></li>
-                        <% } %>
+                    <% if(currentUser.favSongs.length !== 0){ %>
+                        <li class="nav-item active"><a class="nav-link" href="/playlists/favorite"><h5 class="ellipsis">Favorites</h5></a></li>
                     <% } %>
                 </ul>
             </div>

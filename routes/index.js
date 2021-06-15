@@ -135,7 +135,7 @@ router.post("/signUp", function(req, res){
     
     if(password !== rePassword)
     {
-        req.flash("error", "Please try again");
+        req.flash("error", "Your password doesn't match. Please try again");
         res.redirect("back");
     }
 

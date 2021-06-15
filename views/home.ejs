@@ -1,7 +1,7 @@
 <%- include("partials/header_client.ejs") %>
 <%- include("partials/sidebar_home.ejs") %>
 
-<main role="main" class="col-md-10 ms-md-auto px-4 bg-customGradient text-black-75">
+<main role="main" class="col-md-10 ms-md-auto px-4 bg-contentBackground text-black-75">
     <div class="row">
         <h1>Top Hits</h1>
         <% songs.sort(function(a, b){return b.popularity/(new Date(Date.now()) - new Date(b.releaseDate)) - a.popularity/(new Date(Date.now()) - new Date(a.releaseDate))}) %>

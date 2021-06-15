@@ -100,7 +100,7 @@ router.post("/", upload.any([{name: "songImage"}, {name: "songFile"}]), function
             res.redirect("back");
         }
         else{
-            ArtistInfo.find({artistName: newSong.artistName}, function(err, artist){
+            ArtistInfo.findOne({artistName: newSong.artistName}, function(err, artist){
                 if(err){
                     req.flash("error", err.message);
                     res.redirect("back");
@@ -108,6 +108,7 @@ router.post("/", upload.any([{name: "songImage"}, {name: "songFile"}]), function
                 else{
                     artist.songs.push(song);
                     artist.save();
+                    req.flash("success", "New song has been added");
                     res.redirect("back");
                 }
             })
