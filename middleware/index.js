@@ -15,7 +15,7 @@ middlewareObj.isAdmin = function(req, res, next){
         }
     }
     else{
-        req.flash('error', 'You are not the one with POWER!!');
+        req.flash('error', 'You are not admin!');
         res.redirect('back');
     }
 }
@@ -27,7 +27,7 @@ middlewareObj.isUser = function(req, res, next){
         }
     }
     else{
-        req.flash('error', 'You are not belong here, noble');
+        req.flash('error', 'You are not user!');
         res.redirect('back');
     }
 }
