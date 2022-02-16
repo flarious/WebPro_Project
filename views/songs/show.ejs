@@ -19,6 +19,7 @@
         <div class="col-lg-8 col-md-6 col-sm-8">
             <h1 class="ellipsis"><%= song.songName %></h1></a>
             <a href="/artists/<%= song.artistName %>"><h3 class="ellipsis"><%= song.artistName %></h3></a>
+            <audio controls><source src="<%= song.songFile %>" type="audio/mpeg"></audio>
         </div>
         <% if(!currentUser){ %>
         <div class="col-lg-1 col-md-2 col-sm-3 col-6">
