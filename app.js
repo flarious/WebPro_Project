@@ -14,7 +14,7 @@ var artistsRoutes   = require('./routes/artists'),
     playlistsRoutes = require('./routes/playlists'),
     indexRoutes     = require('./routes/index');
 
-mongoose.connect('mongodb://localhost/orpheus');
+mongoose.connect('mongodb://localhost:27017/orpheus');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 app.use(methodOverride('_method'));
@@ -54,6 +54,6 @@ app.use('/playlists', playlistsRoutes)
 
 /* Port */
 
-app.listen('3000', function(req, res){
+app.listen('3001', function(req, res){
     console.log("Server is running");
 });

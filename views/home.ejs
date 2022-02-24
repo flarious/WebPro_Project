@@ -5,7 +5,8 @@
     <div class="row">
         <h1>Top Hits</h1>
         <% songs.sort(function(a, b){return b.popularity/(new Date(Date.now()) - new Date(b.releaseDate)) - a.popularity/(new Date(Date.now()) - new Date(a.releaseDate))}) %>
-        <% for(let i = 0; i < 4; i++){ %>
+        <% var amount = songs.length > 4 ? 4 : songs.length %>
+        <% for(let i = 0; i < amount; i++){ %>
             <div class="col-xxl-3 col-xl-4 col-md-6 col">
                 <div class="item item-sub my-2">
                     <a href="/songs/<%= songs[i].songName %>">
@@ -22,7 +23,7 @@
     <div class="row">
         <h1>New Release</h1>
         <% songs.sort(function(a, b){return b.releaseDate - a.releaseDate}) %>
-        <% for(let i = 0; i < 4; i++){ %>
+        <% for(let i = 0; i < amount; i++){ %>
             <div class="col-xxl-3 col-xl-4 col-md-6 col">
                 <div class="item item-sub my-2">
                     <a href="/songs/<%= songs[i].songName %>">
@@ -39,7 +40,7 @@
     <div class="row">
         <h1>Songs Through Time</h1>
         <% songs.sort(function(a, b){return a.releaseDate - b.releaseDate}) %>
-        <% for(let i = 0; i < 4; i++){ %>
+        <% for(let i = 0; i < amount; i++){ %>
             <div class="col-xxl-3 col-xl-4 col-md-6 col">
                 <div class="item item-sub my-2">
                     <a href="/songs/<%= songs[i].songName %>">
